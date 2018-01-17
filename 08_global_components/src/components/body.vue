@@ -1,6 +1,6 @@
 <template>
     <div>
-        Body
+        Body {{message}}
     </div>
 </template>
 
@@ -8,7 +8,8 @@
     export default {
         data() {
             return {}
-        }
+        },
+        props: ['message']
     }
 </script>
 
