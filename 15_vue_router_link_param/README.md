@@ -1,0 +1,3 @@
+router-link对象方式传递参数
+
+比较GET风格URL和Rest风格URL传参的区别
