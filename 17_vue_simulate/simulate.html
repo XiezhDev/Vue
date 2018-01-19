@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-Router原理模拟</title>
+</head>
+<style>
+    div {
+        height: 100px;
+    }
+
+    .header {
+        background: yellowgreen;
+    }
+
+    .content {
+        background: hotpink;
+    }
+
+    .footer {
+        background: skyblue;
+    }
+</style>
+<body>
+<div class="header">
+    头部
+</div>
+<div id="content" class="content">
+
+</div>
+<div class="footer">
+    底部
+</div>
+<script type="text/javascript">
+
+    window.addEventListener('hashchange', function () {
+        var text = '';
+        switch (location.hash) {
+            case('#music'):
+                text = '音乐数据';
+                break;
+            case('#movie'):
+                text = '电影数据';
+                break;
+        }
+        document.getElementById('content').innerHTML = text;
+    })
+</script>
+</body>
+</html>
