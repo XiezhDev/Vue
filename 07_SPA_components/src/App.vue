@@ -31,15 +31,5 @@
 </script>
 
 <style>
-    .red {
-        background: red;
-    }
 
-    .green {
-        background: green;
-    }
-
-    .big {
-        font-size: 30px;
-    }
 </style>
