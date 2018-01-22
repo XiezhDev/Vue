@@ -12,11 +12,15 @@
             }
         },
         created() {
-            console.log(this.$axios);
-            this.$axios.get('http://120.79.146.147/api/game/list').then(res => {
-                console.log(res);
+            //console.log(this.$axios);
+            this.$axios.get('http://localhost:8080/test/list',{
+                headers: {accept: 'get'}
+            }).then(res => {
+                console.log('成功');
+                console.log(res.data);
+                this.data = res.data;
             }).catch(err => {
-                console.log(err);
+                console.log('失败');
             }).finally(() => {
                 console.log('结束');
             })
