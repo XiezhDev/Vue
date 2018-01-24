@@ -6,6 +6,7 @@ import Member from './components/member/member.vue';
 import Shopcart from './components/shopcart/shopcart.vue';
 import Search from './components/search/search.vue';
 import NewsList from './components/news/newsList.vue';
+import NewsDetail from './components/news/newsDetail.vue';
 import './static/css/global.css';
 
 // 引入路由
@@ -21,7 +22,8 @@ let router = new VueRouter({
         {name: 'member', path: '/member', component: Member},//会员
         {name: 'shopcart', path: '/shopcart', component: Shopcart},//商品展示
         {name: 'search', path: '/search', component: Search},// 查找
-        {name: 'news.list', path: '/news/list', component: NewsList}// 新闻列表
+        {name: 'news.list', path: '/news/list', component: NewsList},// 新闻列表
+        {name: 'news.detail', path: '/news/detail', component: NewsDetail}// 新闻列表
     ]
 })
 
@@ -37,6 +39,17 @@ import './static/vendor/mui/dist/css/mui.css'
 import  Axios from 'axios';
 Vue.prototype.$ajax = Axios;
 Axios.defaults.baseURL = 'http://localhost:8080/api/';
+
+// 引入MomentJs
+import Moment from 'moment';
+//定义成全局过滤器
+Vue.filter('dateConvert', function (value) {
+    return Moment(value).format('YYYY年MM月DD日 HH:mm:ss');
+})
+
+// 引入全局组件
+import NavBar from './components/common/navBar.vue';
+Vue.component('navBar', NavBar);
 
 new Vue({
     el: '#app',

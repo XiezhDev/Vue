@@ -1,17 +1,18 @@
 <template>
     <div class="bottom">
+        <nav-bar title="新闻列表"></nav-bar>
         <ul class="mui-table-view">
             <li v-for="news in newsList" class="mui-table-view-cell mui-media">
-                <a>
+                <router-link :to="{name: 'news.detail', query: {id: news.id}}">
                     <img class="mui-media-object mui-pull-left" :src="news.img_url">
                     <div class="mui-media-body">
                        <span v-text="news.title"></span>
                         <div class="new-desc">
                             <p class="click">{{news.click}}</p>
-                            <p class="time">{{news.add_time}}</p>
+                            <p class="time">{{news.add_time | dateConvert}}</p>
                         </div>
                     </div>
-                </a>
+                </router-link>
             </li>
         </ul>
     </div>
