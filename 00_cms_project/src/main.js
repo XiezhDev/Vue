@@ -5,6 +5,8 @@ import Home from './components/home/home.vue';
 import Member from './components/member/member.vue';
 import Shopcart from './components/shopcart/shopcart.vue';
 import Search from './components/search/search.vue';
+import NewsList from './components/news/newsList.vue';
+import './static/css/global.css';
 
 // 引入路由
 import VueRouter from 'vue-router';
@@ -15,10 +17,11 @@ let router = new VueRouter({
     routes: [
         // 重定向
         {path: '/', redirect: {name: 'home'}},
-        {name: 'home', path: '/home', component: Home},
-        {name: 'member', path: '/member', component: Member},//
-        {name: 'shopcart', path: '/shopcart', component: Shopcart},//
-        {name: 'search', path: '/search', component: Search},
+        {name: 'home', path: '/home', component: Home},//首页
+        {name: 'member', path: '/member', component: Member},//会员
+        {name: 'shopcart', path: '/shopcart', component: Shopcart},//商品展示
+        {name: 'search', path: '/search', component: Search},// 查找
+        {name: 'news.list', path: '/news/list', component: NewsList}// 新闻列表
     ]
 })
 
