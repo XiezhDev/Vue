@@ -16,10 +16,12 @@
                         <div class="mui-media-body">新闻资讯</div>
                     </router-link>
                 </li>
-                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                    <span class="mui-icon mui-icon-share"><span class="mui-badge">5</span></span>
-                    <div class="mui-media-body">图文分享</div>
-                </a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <router-link :to="{name: 'photo.share'}">
+                        <span class="mui-icon mui-icon-share"><span class="mui-badge">5</span></span>
+                        <div class="mui-media-body">图文分享</div>
+                    </router-link>
+                </li>
                 <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                     <span class="mui-icon mui-icon-show"></span>
                     <div class="mui-media-body">商品展示</div>

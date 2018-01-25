@@ -7,6 +7,8 @@ import Shopcart from './components/shopcart/shopcart.vue';
 import Search from './components/search/search.vue';
 import NewsList from './components/news/newsList.vue';
 import NewsDetail from './components/news/newsDetail.vue';
+import Photo from './components/photo/photo.vue';
+import PhotoDetail from './components/photo/photoDetail.vue'
 import './static/css/global.css';
 
 // 引入路由
@@ -23,7 +25,9 @@ let router = new VueRouter({
         {name: 'shopcart', path: '/shopcart', component: Shopcart},//商品展示
         {name: 'search', path: '/search', component: Search},// 查找
         {name: 'news.list', path: '/news/list', component: NewsList},// 新闻列表
-        {name: 'news.detail', path: '/news/detail', component: NewsDetail}// 新闻列表
+        {name: 'news.detail', path: '/news/detail', component: NewsDetail},// 新闻列表
+        {name: 'photo.share', path: '/photo/list', component: Photo},// 图文分享
+        {name: 'photo.detail', path: '/photo/detail', component: PhotoDetail},// 图文详情
     ]
 })
 
