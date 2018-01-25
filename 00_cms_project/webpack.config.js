@@ -39,10 +39,22 @@ module.exports = {
                 loader: 'babel-loader',
                 // 排除node_modules下的所有js，不用ES解析
                 exclude: /node_modules/,
-                options: {
+
+                // 多次使用babel-loader，每次都要配置options，显得冗余
+                // 可以使用.babelrc文件配置babel
+                /*options: {
                     presets: ['es2015'],// 关键字
                     plugins: ['transform-runtime','babel-polyfill']// 函数
-                }
+                }*/
+            },
+            // vue-preview插件编写中使用了es6的语法，需要进行代码编译
+            {
+                test: /vue-preview.src.*?js$/,
+                loader: 'babel-loader'
+                /*options: {
+                    presets: ['es2015'],// 关键字
+                    plugins: ['transform-runtime','babel-polyfill']// 函数
+                }*/
             },
             {
                 //解析vue

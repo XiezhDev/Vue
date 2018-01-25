@@ -4,12 +4,13 @@
         <div class="photo-title">
             <p>{{photo.title}}</p>
             <span>发起日期：{{photo.add_time}}</span>
-            <span>{{click}}次浏览</span>
+            <span>{{photo.click}}次浏览</span>
             <span>分类：民生经济</span>
         </div>
         <ul class="mui-table-view mui-grid-view mui-grid-9">
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                <img :src="photo.img_url"/>
+            <li v-for="(image, index) in images" :key="index" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <!--<img :src="photo.img_url"/>-->
+                <img class="preview-img" :src="image.img" height="100" @click="$preview.open(index, images)">
             </li>
         </ul>
         <div class="photo-desc">
@@ -22,7 +23,8 @@
     export default {
         data() {
             return {
-                photo: {}
+                photo: {},
+                images: []
             }
         },
         created() {
@@ -30,6 +32,16 @@
 
             this.$ajax.get('/photo/detail/' + id).then(res => {
                 this.photo = res.data.data;
+            })
+
+            this.$ajax('/image/list').then(res => {
+                this.images = res.data.data;
+
+                // 为每个图片对象添加w和h属性，作为预览图的宽和高
+                this.images.forEach((image) => {
+                    image.w = 600;
+                    image.h = 400;
+                })
             })
         }
     }

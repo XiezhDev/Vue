@@ -27,7 +27,7 @@ let router = new VueRouter({
         {name: 'news.list', path: '/news/list', component: NewsList},// 新闻列表
         {name: 'news.detail', path: '/news/detail', component: NewsDetail},// 新闻列表
         {name: 'photo.share', path: '/photo/list', component: Photo},// 图文分享
-        {name: 'photo.detail', path: '/photo/detail', component: PhotoDetail},// 图文详情
+        {name: 'photo.detail', path: '/photo/detail/:id', component: PhotoDetail},// 图文详情
     ]
 })
 
@@ -50,6 +50,10 @@ import Moment from 'moment';
 Vue.filter('dateConvert', function (value) {
     return Moment(value).format('YYYY年MM月DD日 HH:mm:ss');
 })
+
+// 引入vue-preview
+import VuePreview from 'vue-preview';
+Vue.use(VuePreview);
 
 // 引入全局组件
 import NavBar from './components/common/navBar.vue';
