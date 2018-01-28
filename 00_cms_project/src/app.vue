@@ -1,6 +1,6 @@
 <template>
     <div>
-        <mt-header title="谢智辉个人信息管理系统"></mt-header>
+        <mt-header title="信息管理系统"></mt-header>
         <router-view></router-view>
 
         <nav class="mui-bar mui-bar-tab">
